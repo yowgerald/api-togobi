@@ -1,16 +1,22 @@
+Commands:
 
-$ source venv/bin/activate
+```
+source venv/bin/activate
+```
 
-$ uvicorn main:app --reload
-
+```
+uvicorn main:app --reload
+```
 
 Packages:
-fastapi
-uvicorn
-boto3
-python-multipart
-python-dotenv
 
+- fastapi
+- uvicorn
+- boto3
+- python-multipart
+- python-dotenv
+- gpt4all
 
-Extensions:
-Pylint
+VS Code Extensions:
+
+- Pylint
