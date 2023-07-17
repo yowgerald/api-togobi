@@ -4,6 +4,7 @@ import uvicorn
 from config import app_settings
 from routers.v1 import file_router
 from routers.v1 import signer_router
+from routers.v1 import gpt_router
 
 app = FastAPI()
 
@@ -11,6 +12,7 @@ PREFIX_V1 = "/api/v1"
 
 app.include_router(file_router.router, prefix=PREFIX_V1)
 app.include_router(signer_router.router, prefix=PREFIX_V1)
+app.include_router(gpt_router.router, prefix=PREFIX_V1)
 
 # Run the FastAPI application using Uvicorn
 if __name__ == "__main__":
