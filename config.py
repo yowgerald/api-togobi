@@ -14,6 +14,8 @@ class Settings(BaseSettings):
     aws_cloudfront_url: str = ""
     aws_cloudfront_key_path: str = ""
 
+    firebase_credentials: str = ""
+
     class Config:
         """
         The Config class has a variable called env_file

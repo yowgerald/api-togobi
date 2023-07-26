@@ -16,7 +16,13 @@ Packages:
 - python-multipart
 - python-dotenv
 - gpt4all
+- firebase-admin
 
 VS Code Extensions:
 
 - Pylint
+
+Notes:
+
+- link for middleware may route group
+  https://github.com/tiangolo/fastapi/issues/1174

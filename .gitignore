@@ -3,3 +3,5 @@ venv/*
 .env
 .aws/*
 !.aws/*.gitkeep
+.google/*
+!.google/*.gitkeep
