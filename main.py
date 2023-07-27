@@ -2,6 +2,9 @@
 from fastapi import FastAPI
 import uvicorn
 from starlette.middleware.base import BaseHTTPMiddleware
+from firebase_admin import credentials
+import firebase_admin
+
 from config import app_settings
 from routers.v1 import file_router
 from routers.v1 import signer_router
@@ -10,6 +13,11 @@ from middlewares.auth_middleware import AuthMiddleware
 
 app = FastAPI()
 
+# initialize firebase
+cred = credentials.Certificate(app_settings.firebase_credentials)
+firebase_admin.initialize_app(cred)
+
+# add middleware
 auth_middleware = AuthMiddleware()
 app.add_middleware(BaseHTTPMiddleware, dispatch=auth_middleware)
 

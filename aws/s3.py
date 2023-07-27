@@ -1,5 +1,6 @@
 """ The `from` statements are importing various modules and classes """
 import boto3
+
 from config import app_settings
 
 

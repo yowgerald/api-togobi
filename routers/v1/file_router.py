@@ -1,5 +1,6 @@
 """ The code is importing necessary modules and classes for the code to work properly."""
 from fastapi import UploadFile, File, APIRouter
+
 from aws.s3 import S3
 
 router = APIRouter()

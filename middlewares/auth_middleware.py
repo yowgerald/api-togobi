@@ -1,12 +1,8 @@
 """ The `from` statements are importing various modules and classes """
 from fastapi import Request
 from fastapi.responses import JSONResponse
-from firebase_admin import auth, credentials
-import firebase_admin
-from config import app_settings
 
-cred = credentials.Certificate(app_settings.firebase_credentials)
-firebase_admin.initialize_app(cred)
+from gcp.firebase import Firebase
 
 
 class AuthMiddleware:
@@ -16,7 +12,8 @@ class AuthMiddleware:
 
     async def __call__(self, request: Request, call_next):
         try:
-            auth_token = request.headers.get("AuthToken")
+            firebase = Firebase()
+            auth_token = request.headers.get("Auth-Token")
 
             if not auth_token:
                 # Return a JSON response with an error message if AuthToken header is missing
@@ -25,7 +22,7 @@ class AuthMiddleware:
                     content={"detail": "Authorization token not provided."},
                 )
 
-            auth.verify_id_token(auth_token)
+            firebase.verify_token(auth_token)
 
             # process the request and get the response
             response = await call_next(request)
