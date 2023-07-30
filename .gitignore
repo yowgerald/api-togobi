@@ -5,3 +5,4 @@ venv/*
 !.aws/*.gitkeep
 .gcp/*
 !.gcp/*.gitkeep
+*.pyc

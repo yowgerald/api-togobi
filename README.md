@@ -5,18 +5,12 @@ source venv/bin/activate
 ```
 
 ```
-uvicorn main:app --reload
+pip3 install -r requirements.txt
 ```
 
-Packages:
-
-- fastapi
-- uvicorn
-- boto3
-- python-multipart
-- python-dotenv
-- gpt4all
-- firebase-admin
+```
+uvicorn main:app --reload
+```
 
 VS Code Extensions:
 

@@ -1,5 +1,5 @@
 """ The `from` statements are importing various modules and classes """
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
