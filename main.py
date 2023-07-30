@@ -18,8 +18,10 @@ cred = credentials.Certificate(app_settings.firebase_credentials)
 firebase_admin.initialize_app(cred)
 
 # add middleware
-auth_middleware = AuthMiddleware()
-app.add_middleware(BaseHTTPMiddleware, dispatch=auth_middleware)
+
+if app_settings.app_env != "local":
+    auth_middleware = AuthMiddleware()
+    app.add_middleware(BaseHTTPMiddleware, dispatch=auth_middleware)
 
 PREFIX_V1 = "/api/v1"
 

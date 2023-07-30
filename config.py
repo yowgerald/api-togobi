@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     """The above class is a subclass of BaseSettings."""
 
     app_port: int = 8000
+    app_env: str = "prod"
 
     aws_region: str = ""
     aws_s3_bucket: str = ""
