@@ -17,6 +17,8 @@ class Settings(BaseSettings):
 
     firebase_credentials: str = ""
 
+    ai21_api_key: str = ""
+
     class Config:
         """
         The Config class has a variable called env_file

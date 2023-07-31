@@ -27,6 +27,5 @@ https://www.thepythoncode.com/article/paraphrase-text-using-transformers-in-pyth
 https://github.com/makcedward/nlpaug/tree/master
 
 https://www.ai21.com/studio
-https://www.anthropic.com
-https://textcortex.com/
-https://studio.oneai.com/
+
+Claude 2 vs GPT4
